@@ -17,14 +17,20 @@ class Codon {
             M=12, F=13, P=14, S=15,
             T=16, W=17, Y=18, V=19,
             STOP=20;
-
 	static const char* AminoAcids[21];
 	static const char* AminoAcidMono[21];
+
+	static int getAAIdx(char aa);
     
-        vector<double> getFrequency(int aa);
         vector<double>* getFrequencyTable();
-	vector<string> getCodon(int aa);
+        vector<double> getFrequency(int aa);
+	vector<double> getFreqeuncy(char aa);
+
 	vector<string>* getCodonTable();
+	vector<string> getCodon(int aa);
+	vector<string> getCodon(char aa);
+
+	string generateOligo(string aaSeq);
 
 	int readCodonFrequencyTable(char* file);
 	void printCodonFrequencyTable();	
